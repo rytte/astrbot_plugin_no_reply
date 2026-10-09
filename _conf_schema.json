@@ -1,0 +1,17 @@
+{
+  "inject_prompt": {
+    "description": "注入自主沉默引导提示词",
+    "type": "bool",
+    "default": false,
+    "hint": "默认关闭。关闭后模型仍可通过工具描述了解并调用 no_reply，不会修改系统提示词。"
+  },
+  "prompt": {
+    "description": "引导提示词",
+    "type": "text",
+    "default": "你可以根据当前对话和已有指令，自主选择回复或保持沉默。决定不回复时，仅调用 no_reply 工具，不要先输出文字、解释沉默理由、发送占位内容或同时调用其他工具。需要回复时正常回复，不要调用 no_reply。",
+    "condition": {
+      "inject_prompt": true
+    },
+    "hint": "启用注入后追加到现有系统提示词，不覆盖原有内容。只有当前请求包含启用的 no_reply 工具时才会注入；启用时不能为空。"
+  }
+}

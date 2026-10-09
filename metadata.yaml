@@ -1,0 +1,6 @@
+name: astrbot_plugin_no_reply
+display_name: 自主沉默
+desc: 为模型提供主动选择不回复的工具，支持可选的引导提示词注入。
+version: 0.1.0
+author: rytte
+astrbot_version: ">=4.27,<5"
